@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Lover</title>
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap");
+/* Base */
+:root {
+  --clr-primary: #f01b08;
+  --clr-secondary: #050201;
+}
+
+*
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f2f47d;
+  color: var(--clr-secondary);
+  overflow-x: hidden;
+ 
+  }
+
+.section {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  padding: 0 30px;
+}
+
+.primary {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.secondary {
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.tertiary {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 14px 20px;
+  background: var(--clr-primary);
+  border-radius: 4px;
+  color: #080101;
+  text-decoration: none;
+  font-size: 22px;
+  display: inline-block;
+  margin: 20px 0;
+ text-align: center;
+
+}
+.btn :hover{ background-color: #ece8e7;
+
+}
+
+/* End Base */
+
+/* Menu */
+nav {
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background: #f45c2d;
+  box-shadow: 0 1px 1px -1px rgba(147, 4, 4, 0.22);
+  z-index: 22;
+}
+
+label.logo {
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 30px;
+  font-weight: 700;
+}
+
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+nav ul li a {
+  font-size: 18px;
+  padding: 7px 13px;
+  text-decoration: none;
+  color: var(--clr-secondary);
+}
+
+.menu a.active,
+.menu a:hover {
+  border-bottom: 2px solid var(--clr-primary);
+  transition: 0.3s;
+  border-radius: 75px;
+  
+}
+
+.checkbtn {
+  font-size: 30px;
+  color: #080700;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+/* End Menu */
+
+/* Hero Section */
+#hero-section {
+  background: #f75104;
+  margin-top: 60px;
+border-radius: 300px;
+border: #f7f4f3;
+border-style:double;
+}
+
+.text,
+.visual {
+  width: 50%;
+}
+
+.text {
+  margin: 0 20px;
+}
+
+.visual img {
+  width: 80%;
+  height: auto;
+  display: block;
+}
+
+#hero-section .text {
+  margin-left: 30px;
+}
+
+#hero-section .visual img {
+  margin-left: auto;
+}
+/* End Hero Section */
+
+/* How It Works */
+#how-it-works {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.box {
+  border: 1px solid #fe1111;
+  padding: 25px 5px;
+  margin: 0 10px;
+  border-radius: 8px;
+  font-size: 18px;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.box ion-icon {
+  font-size: 35px;
+  color: var(--clr-primary);
+  margin: 15px 0;
+}
+
+.box.active,
+.box:hover {
+  color: #f8f3f3;
+  border-color: var(--clr-primary);
+  background: var(--clr-primary);
+}
+
+.box.active ion-icon,
+.box:hover ion-icon {
+  color: #f30808;
+}
+/* End How It Works */
+
+/* About */
+#about .visual img,
+#app .visual img {
+  margin-right: auto;
+}
+/* End About */
+
+/* Restaurant Menu */
+.category {
+  list-style: none;
+  text-align: center;
+  margin: 20px 0 40px 0;
+}
+
+.category li {
+  display: inline-block;
+  margin: 0 15px;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.category li.active {
+  color: var(--clr-primary);
+}
+
+.restaurant-menu {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.menu-item {
+  width: 260px;
+  margin: 0 auto;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.menu-item img {
+  width: 100%;
+}
+
+.order {
+  justify-content: space-between;
+}
+
+.btn-menu {
+  padding: 6px 10px;
+  font-size: 16px;
+  text-align: center;
+  background: #0d0d0d;
+  border: 1px solid var(--clr-primary);
+  color: var(--clr-primary);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 8px 0;
+}
+
+.location {
+  font-size: 18px;
+  font-weight: 500;
+}
+/* End Restaurant Menu */
+
+/* Testimonial */
+#testimonial .visual img {
+  margin-left: auto;
+}
+
+.user {
+  margin-top: 30px;
+  justify-content: start;
+}
+
+.user img {
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+/* End Testimonial */
+
+/* FAQ */
+#faq .secondary {
+  text-align: center;
+}
+
+.faq {
+  width: 60%;
+  margin: 50px auto 20px auto;
+}
+
+summary {
+  padding: 1em;
+  border: 1px solid #eb0c0c;
+  margin-bottom: 1em;
+  cursor: pointer;
+  outline: none;
+  border-radius: 0.3em;
+  font-weight: 600;
+}
+
+details[open] summary ~ * {
+  animation: open 1s ease-in-out;
+}
+
+@keyframes open {
+  from {
+    opacity: 1;
+    margin-top: -10px;
+  }
+
+  top {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+/* End FAQ */
+
+/* App */
+#app {
+  text-align: center;
+}
+
+.app-store {
+  background: #000;
+  margin: 0 10px;
+  padding: 4px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #f1ef86;
+  cursor: pointer;
+}
+
+.app-store p {
+  margin-top: 8px;
+}
+
+.app-store span {
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.app-store ion-icon {
+  font-size: 30px;
+  margin-right: 10px;
+}
+
+.download {
+  margin: 30px 0;
+}
+/* End App */
+
+/* Footer */
+.footer {
+  background: var(--clr-secondary);
+  color: #fdf7f7;
+  padding: 30px 0;
+}
+
+.footer .container {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.footer ul {
+  list-style: none;
+  line-height: 30px;
+  font-size: 16px;
+}
+
+.footer ul li {
+  cursor: pointer;
+}
+
+.footer-about {
+  width: 35%;
+}
+
+.copyright {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+  border-top: 1px solid #b2b2b2;
+}
+/* End Footer */
+
+/* Responsive  */
+@media (max-width: 952px) {
+  label.logo {
+    font-size: 30px;
+    padding-left: 20px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+    color: var(--clr-primary);
+  }
+
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 80px;
+    left: -100%;
+    top: 80px;
+    transition: all 0.5s;
+    text-align: center;
+
+  }
+
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+   background-color: #f0efe6;
+   border: #f10a0a;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+  }
+
+  .menu a:hover,
+  .menu a.active {
+    background: none;
+    color: var(--clr-primary);
+  }
+
+  #check:checked ~ ul {
+    left: 0;
+  }
+
+  #hero-section {
+    margin-top: 80px;
+  }
+
+  #hero-section .text {
+    margin-left: auto;
+  }
+
+  .flex {
+    flex-direction: column;
+  }
+
+  .visual,
+  .text {
+    width: 70%;
+    margin: 15px auto;
+    text-align: center;
+  }
+
+  .download,
+  .user {
+    flex-direction: row;
+  }
+
+  .user {
+    justify-content: center;
+  }
+
+  .visual img {
+    margin: 0 auto;
+  }
+
+  .box {
+    margin: 15px 0;
+  }
+
+  .restaurant-menu {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+
+  .faq,
+  .menu-item {
+    width: 80%;
+  }
+
+  .primary {
+    font-size: 56px;
+  }
+
+  .secondary {
+    font-size: 40px;
+  }
+
+  .tertiary {
+    font-size: 20px;
+  }
+
+  .footer-about {
+    width: 100%;
+    text-align: center;
+  }
+
+  .quick-links,
+  .get-in-touch,
+  .footer-category {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .text,
+  .visual {
+    width: 90%;
+  }
+
+  .restaurant-menu {
+    grid-template-columns: 1fr;
+  }
+
+  .faq {
+    width: 90%;
+  }
+
+  .app-store {
+    margin: 10px 0;
+  }
+
+  .download {
+    flex-direction: column;
+  }
+
+  .primary {
+    font-size: 48px;
+  }
+
+  .secondary {
+    font-size: 32px;
+  }
+
+  .tertiary {
+    font-size: 17px;
+  }
+}
+/* End Responsive  */
+
+
+
+
+
+.visual{
+    border-radius: 100px;
+}
+
+
+
+    </style>
+    <!-- CSS -->
+    
+  </head>
+  <body>
+    <!-- Menu -->
+    <div class="menu">
+      <nav>
+        <input type="checkbox" id="check" />
+        <label for="check" class="checkbtn">
+          <ion-icon name="grid-outline"></ion-icon>
+        </label>
+
+        <label class="logo">foody.com</label>
+
+        <ul>
+          <li><a href="#hero-section" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#testimonial">Reviews</a></li>
+          <li><a href="#app">Download App</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- End Menu -->
+
+    <!-- Hero Section -->
+    <div class="section flex" id="hero-section">
+      <div class="text">
+        <h1 class="primary">
+          "Satisfy Your Every<br />
+          Craving"
+        </h1>
+
+        <p class="tertiary">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa,
+          provident dolorum. Voluptatum ducimus minima quasi unde, voluptatibus
+          soluta eligendi. Enim, architecto autem.
+        </p>
+
+        <a href="#menu" class="btn">Explore Menu</a>
+      </div>
+      <div class="visual">
+        <img src="https://th.bing.com/th/id/OIP.eD7MpRmuCp5oKFlcdoKmuwHaE8?w=266&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="" />
+      </div>
+    </div>
+    <!-- End Hero Section -->
+
+    <!-- How It Works -->
+    <div class="section" id="how-it-works">
+      <h2 class="secondary">How It Works</h2>
+
+      <div class="container flex">
+        <div class="box">
+          <h3>Easy Order</h3>
+          <ion-icon name="timer-outline"></ion-icon>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+            non?
+          </p>
+        </div>
+
+        <div class="box active">
+          <h3>Best Quality</h3>
+          <ion-icon name="trophy-outline"></ion-icon>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+            non?
+          </p>
+        </div>
+
+        <div class="box">
+          <h3>Fast Delivery</h3>
+          <ion-icon name="checkmark-done-circle-outline"></ion-icon>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+            non?
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- End How It Works -->
+
+    <!-- About -->
+    <div class="section" id="about">
+      <div class="container flex">
+        <div class="visual">
+          <img src="data:image/jpeg;base64,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" alt="" />
+        </div>
+        <div class="text">
+          <div class="secondary">About Our Restaurant</div>
+          <h2 class="primary">120+</h2>
+
+          <h3 class="tertiary">Our Delicious Food</h3>
+
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia
+            itaque saepe id hic rem doloribus quas esse voluptatibus eius sequi,
+            possimus maxime dolores tempore facilis fugit porro mollitia, est
+            consequuntur.
+          </p>
+
+          <a href="#menu" class="btn">Explore Menu</a>
+        </div>
+      </div>
+    </div>
+    <!-- End About -->
+
+    <!-- Restaurant Menu -->
+    <div class="section" id="menu">
+      <div class="container">
+        <ul class="category">
+          <li class="active">All</li>
+          <li>Biryani</li>
+          <li>Chicken</li>
+          <li>Pizza</li>
+          <li>Burger</li>
+          <li>Pasta</li>
+        </ul>
+
+        <div class="container">
+          <div class="restaurant-menu">
+            <div class="menu-item">
+              <img src="https://raw.githubusercontent.com/programmercloud/foodlover/main/img/menu-1.jpg" alt="" />
+
+              <div class="title">Food Restaurant | Chineese & Thai</div>
+
+              <div class="location">bhopal madhyapradesh, india</div>
+
+              <div class="order flex">
+                <div class="price">RS 150</div>
+                <a href="#" class="btn btn-menu">Order Now</a>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="https://raw.githubusercontent.com/programmercloud/foodlover/main/img/menu-2.jpg" alt="" />
+
+              <div class="title">Food Restaurant | Chineese & Thai</div>
+
+              <div class="location">bhopal madhyapradesh ,india</div>
+
+              <div class="order flex">
+                <div class="price">RS.180</div>
+                <a href="#" class="btn btn-menu">Order Now</a>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="https://raw.githubusercontent.com/programmercloud/foodlover/main/img/menu-3.jpg" alt="" />
+
+              <div class="title">Food Restaurant | Chineese & Thai</div>
+
+              <div class="location">bhopal madhyapradesh ,india</div>
+
+              <div class="order flex">
+                <div class="price">RS 250</div>
+                <a href="#" class="btn btn-menu">Order Now</a>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="https://raw.githubusercontent.com/programmercloud/foodlover/main/img/menu-4.jpg" alt="" />
+
+              <div class="title">Food Restaurant | Chineese & Thai</div>
+
+              <div class="location">bhopal madhyapradesh ,india</div>
+
+              <div class="order flex">
+                <div class="price"> RS.230</div>
+                <a href="#" class="btn btn-menu">Order Now</a>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="https://raw.githubusercontent.com/programmercloud/foodlover/main/img/menu-5.jpg" alt="" />
+
+              <div class="title">Food Restaurant | Chineese & Thai</div>
+
+              <div class="location">bhopal madhyapradesh ,india</div>
+
+              <div class="order flex">
+                <div class="price">RS 300</div>
+                <a href="#" class="btn btn-menu">Order Now</a>
+              </div>
+            </div>
+
+            <div class="menu-item">
+              <img src="https://raw.githubusercontent.com/programmercloud/foodlover/main/img/menu-6.jpg" alt="" />
+
+              <div class="title">Food Restaurant | Chineese & Thai</div>
+
+              <div class="location">bhopal madhyapradesh india</div>
+
+              <div class="order flex">
+                <div class="price">RS 250</div>
+                <a href="#" class="btn btn-menu">Order Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Restaurant Menu -->
+
+    <!-- Testimonial -->
+    <div class="section" id="testimonial">
+      <div class="container flex">
+        <div class="text">
+          <h2 class="secondary">What people say about Foody.com</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore,
+            eos voluptatem odio, molestias ullam error dolor rem laboriosam illo
+            quae odit aliquam sint a amet, autem natus! Praesentium, ipsam
+            mollitia?
+          </p>
+
+          <div class="user flex">
+            
+            <div class="name">
+              <div class="title">Ekveer Tiwari</div>
+              <div class="location">Bhopal Madhyapradesh ,India</div>
+            </div>
+          </div>
+        </div>
+        <div class="visual">
+          <img src="https://raw.githubusercontent.com/programmercloud/foodlover/main/img/testimonial.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <!-- End Testimonial -->
+
+    <!-- FAQ -->
+    <div class="section" id="faq">
+      <h2 class="secondary">Frequently Asked Questions</h2>
+
+      <div class="faq">
+        <details>
+          <summary>I got wrong food what shoud I do?</summary>
+          <div class="content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Asperiores amet sunt at?
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>I got wrong food what shoud I do?</summary>
+          <div class="content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Asperiores amet sunt at?
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>I got wrong food what shoud I do?</summary>
+          <div class="content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Asperiores amet sunt at?
+            </p>
+          </div>
+        </details>
+
+        <details>
+          <summary>I got wrong food what shoud I do?</summary>
+          <div class="content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Asperiores amet sunt at?
+            </p>
+          </div>
+        </details>
+      </div>
+    </div>
+    <!-- End FAQ -->
+
+    <!-- App -->
+    <div class="section" id="app">
+      <div class="container flex">
+        <div class="visual">
+          <img src="https://raw.githubusercontent.com/programmercloud/foodlover/main/img/app.png" alt="" />
+        </div>
+
+        <div class="text">
+          <h2 class="secondary">Download foody.com</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+            laudantium velit iure illo facilis at delectus sint, doloribus
+            magnam officiis rerum nobis, perspiciatis maxime repellat qui
+            consequuntur? Aspernatur, architecto voluptatum!
+          </p>
+
+          <div class="download flex">
+            <div class="app-store">
+              <ion-icon name="logo-google-playstore"></ion-icon>
+              <p>
+                GET IT ON <br />
+                <span>Google Play</span>
+              </p>
+            </div>
+
+            <div class="app-store">
+              <ion-icon name="logo-apple"></ion-icon>
+              <p>
+                Donload on the <br />
+                <span>App Store</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End App -->
+
+    <!-- Footer -->
+    <div class="footer">
+      <div class="container flex">
+        <div class="footer-about">
+          <h2>About</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime
+            aspernatur sit deleniti enim voluptas voluptatum incidunt rerum,
+            exercitationem voluptate nemo quo impedit ad perspiciatis tempore
+            nulla dolore fugit, fuga eos.
+          </p>
+        </div>
+
+        <div class="footer-category">
+          <h2>Our Menu</h2>
+
+          <ul>
+            <li>Biryani</li>
+            <li>Chicken</li>
+            <li>Pizza</li>
+            <li>Burger</li>
+            <li>Pasta</li>
+          </ul>
+        </div>
+
+        <div class="quick-links">
+          <h2>Quick Links</h2>
+
+          <ul>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Menu</li>
+            <li>Order</li>
+            <li>Services</li>
+          </ul>
+        </div>
+
+        <div class="get-in-touch">
+          <h2>Get in touch</h2>
+          <ul>
+            <li>Account</li>
+            <li>Support Center</li>
+            <li>Feedback</li>
+            <li>Suggession</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <p>Copyright &copy; 2022. All Rights Reserved.</p>
+      </div>
+    </div>
+    
+           <!--   BTN   -->
+    
+    <!-- End Footer -->
+
+    <!-- Ion Icons Js -->
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
+  </body>
+</html>
